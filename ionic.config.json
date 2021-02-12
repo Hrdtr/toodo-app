@@ -1,0 +1,7 @@
+{
+  "name": "Toodo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

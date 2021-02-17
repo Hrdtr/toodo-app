@@ -1,0 +1,15 @@
+ion-tab-bar {
+  border: 0;
+  margin-top: -1px;
+}
+.section-title {
+  font-size: 20px;
+}
+.base-padding {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.alert-class .alert-button.sc-ion-alert-ios {
+  border: none !important;
+}

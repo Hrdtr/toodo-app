@@ -1,11 +1,12 @@
 <template>
   <div id="container">
-    <strong>{{ name }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>Toodo</strong> App
+    <!-- eslint-disable-next-line vue/no-parsing-error -->
+    <p>Made with ❤️ &nbsp by <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/hrdtr_">Herdi Tr.</a></p>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 
 export default {
   name: 'ExploreContainer',
@@ -21,7 +22,7 @@ export default {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 90%;
   transform: translateY(-50%);
 }
 

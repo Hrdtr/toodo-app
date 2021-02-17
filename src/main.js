@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router';
 
 import { IonicVue } from '@ionic/vue';
+import { store } from './store'
+import appwrite from "./appwrite";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/vue/css/core.css';
@@ -23,10 +25,21 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+/* Theme variables */
+import './theme/custom.css';
+
 const app = createApp(App)
-  .use(IonicVue)
-  .use(router);
-  
+  .use(IonicVue, {
+    rippleEffect: false,
+    mode: 'ios'
+  })
+  .use(router)
+  .use(store);
+
+app.config.globalProperties.$appwrite = appwrite;
+
+store.dispatch('authCheck')
+
 router.isReady().then(() => {
   app.mount('#app');
 });

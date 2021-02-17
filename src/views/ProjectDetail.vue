@@ -1,7 +1,7 @@
 <template>
   <ion-page ref="page">
     <ion-header class="ion-no-border" translucent>
-      <ion-toolbar>
+      <ion-toolbar style="--background: var(--ion-background-color, #fff);">
         <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
@@ -36,7 +36,15 @@
         <div class="task-card-content ion-padding">
           <div v-if="task.status === 1" class="task-done-indicator"></div>
           <div class="task-card-header">
-            <p color="none" class="task-card-title" :class="task.status === 1 ? 'task-done': ''">
+            <p color="none" class="task-card-title"
+              :class="task.status === 1 && task.expanded 
+                ? 'task-done ion-text-wrap'
+                : task.status === 0 && !task.expanded
+                ? 'ion-text-nowrap'
+                : task.status === 1 && !task.expanded
+                ? 'task-done ion-text-nowrap' 
+                : 'ion-text-wrap'"
+            >
               {{ task.title }}
             </p>
             <button v-if="task.expanded" color="none" @click.stop="collapseTask(i)" style="background: transparent; margin-top: -5px;">
@@ -78,12 +86,12 @@
           </div>
         </div>
       </ion-card>
-
       <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="ion-margin-bottom">
         <ion-fab-button @click="openModal">
           <ion-icon :icon="add" />
         </ion-fab-button>
       </ion-fab>
+      <div style="height: 160px"></div>
     </ion-content>
   </ion-page>
 </template>

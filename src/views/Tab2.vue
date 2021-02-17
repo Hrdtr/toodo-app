@@ -1,7 +1,7 @@
 <template>
   <ion-page ref="page">
-    <ion-header class="ion-no-border">
-      <ion-toolbar>
+    <ion-header class="ion-no-border" translucent>
+      <ion-toolbar style="--background: var(--ion-background-color, #fff);">
         <ion-title>All Tasks</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -60,11 +60,19 @@
           <div class="task-card-content ion-padding">
             <div v-if="task.status === 1" class="task-done-indicator"></div>
             <div class="task-card-header">
-              <div style="display: flex; flex-direction: column;">
+              <div style="display: flex; flex-direction: column; width: 85%;">
                 <span style="margin-bottom: 2px;">
                   {{ task.project }}
                 </span>
-                <p color="none" class="task-card-title" :class="task.status === 1 ? 'task-done': ''">
+                <p color="none" class="task-card-title" 
+                  :class="task.status === 1 && task.expanded 
+                    ? 'task-done ion-text-wrap'
+                    : task.status === 0 && !task.expanded
+                    ? 'ion-text-nowrap'
+                    : task.status === 1 && !task.expanded
+                    ? 'task-done ion-text-nowrap' 
+                    : 'ion-text-wrap'"
+                  >
                   {{ task.title }}
                 </p>
               </div>
@@ -108,7 +116,6 @@
           </div>
         </ion-card>
       </div>
-
     </ion-content>
   </ion-page>
 </template>

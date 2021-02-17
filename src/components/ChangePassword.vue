@@ -3,7 +3,9 @@
     <ion-toolbar>
       <ion-title>{{ title }}</ion-title>
       <ion-buttons slot="end">
-        <ion-button @click="dismissModal">Close</ion-button>
+        <ion-button @click="dismissModal">
+          <ion-icon :icon="closeOutline" size="large"></ion-icon>
+        </ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
@@ -54,10 +56,14 @@ import {
   IonInput,
   IonLabel,
   IonText,
+  IonIcon,
   modalController,
   loadingController,
   toastController
 } from "@ionic/vue";
+import {
+  closeOutline,
+} from 'ionicons/icons';
 
 export default ({
   name: "AddTask",
@@ -66,6 +72,7 @@ export default ({
   },
   data() {
     return {
+      closeOutline,
       currentPassword: '',
       newPassword: '',
       errorMessage: ''
@@ -83,6 +90,7 @@ export default ({
     IonInput,
     IonLabel,
     IonText,
+    IonIcon,
   },
   methods: {
     dismissModal() {

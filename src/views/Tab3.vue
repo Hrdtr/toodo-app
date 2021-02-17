@@ -1,7 +1,7 @@
 <template>
   <ion-page ref="page">
-    <ion-header class="ion-no-border">
-      <ion-toolbar>
+    <ion-header class="ion-no-border" translucent>
+      <ion-toolbar style="--background: var(--ion-background-color, #fff);">
         <ion-title>Account</ion-title>
       </ion-toolbar>
     </ion-header>

@@ -1,7 +1,7 @@
 <template>
   <ion-page ref="page">
-    <ion-header class="ion-no-border">
-      <ion-toolbar>
+    <ion-header class="ion-no-border" translucent>
+      <ion-toolbar style="--background: var(--ion-background-color, #fff);">
         <ion-title>Toodo</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -24,6 +24,7 @@
           <ion-icon :icon="add" />
         </ion-fab-button>
       </ion-fab>
+      <div style="height: 160px"></div>
     </ion-content>
   </ion-page>
 </template>

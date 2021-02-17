@@ -28,6 +28,8 @@ import './theme/variables.css';
 /* Theme variables */
 import './theme/custom.css';
 
+import './registerServiceWorker'
+
 const app = createApp(App)
   .use(IonicVue, {
     rippleEffect: false,

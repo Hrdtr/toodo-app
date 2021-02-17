@@ -105,14 +105,9 @@ export default  {
     async login() {
       try {
         this.startLoading()
-        const res = await this.$appwrite.account.createSession(this.email, this.password)
-        this.$store.commit('setUser', res)
-        this.$store.commit('setIsLoggedIn', true)
-        localStorage.setItem('isLoggedIn', true)
-        this.$router.replace('/tabs/tab1')
-        this.$refs.login.reset()
-        this.errorMessage = ''
-        loadingController.dismiss()
+        await this.$appwrite.account.createSession(this.email, this.password)
+        localStorage.setItem('isLoggedIn', 'true')
+        location.reload()
       } catch (error) {
         this.errorMessage = error.message
         loadingController.dismiss()

@@ -87,11 +87,8 @@ export default {
       try {
         this.startLoading()
         await this.$appwrite.account.deleteSession('current')
-        this.$store.commit('setUser', null)
-        this.$store.commit('setIsLoggedIn', false)
-        localStorage.setItem('isLoggedIn', false)
-        loadingController.dismiss()
-        this.$router.push('/login')
+        localStorage.setItem('isLoggedIn', 'false')
+        location.reload();
       } catch (error) {
         console.log(error)
         loadingController.dismiss()

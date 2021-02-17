@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import appwrite from "./appwrite";
 
-const isLoggedIn = localStorage.getItem('isLoggedIn')
+const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true' ? true : false
 
 export const store = createStore({
   state () {
@@ -35,13 +35,13 @@ export const store = createStore({
       appwrite.account.get()
         .then((res) => {
           commit('setUser', res)
-          commit('setIsLoggedIn',true)
-          localStorage.setItem('isLoggedIn', true)
+          commit('setIsLoggedIn', true)
+          localStorage.setItem('isLoggedIn', 'true')
         })
         .catch((error) => {
           commit('setUser', null)
           commit('setIsLoggedIn', false)
-          localStorage.setItem('isLoggedIn', false)
+          localStorage.setItem('isLoggedIn', 'false')
           console.log(error)
         })
     },

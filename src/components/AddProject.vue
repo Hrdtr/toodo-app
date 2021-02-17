@@ -19,7 +19,7 @@
     <form ref="newProject" @submit.prevent="saveData">
       <ion-item color="none">
         <ion-label position="floating">Name</ion-label>
-        <ion-input v-model="payload.name" autofocus required></ion-input>
+        <ion-input v-model="payload.name" required></ion-input>
       </ion-item>
       <ion-item color="none">
         <ion-label position="floating">Description</ion-label>

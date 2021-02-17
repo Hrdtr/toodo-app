@@ -47,8 +47,13 @@ export default {
       person,
     }
   },
-  mounted() {
+  created() {
     this.$store.dispatch('fetchData')
   },
+  // mounted() {
+  //   if (this.$store.state.isLoggedIn === false) {
+  //     this.$router.replace('/login')
+  //   }
+  // }
 }
 </script>

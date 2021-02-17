@@ -9,7 +9,6 @@ const routes = [
   {
     path: '/',
     redirect: '/tabs/tab1',
-    meta: { requiresAuth: true }
   },
   {
     path: '/login',
@@ -22,7 +21,6 @@ const routes = [
   {
     path: '/tabs/',
     component: Tabs,
-    meta: { requiresAuth: true },
     children: [
       {
         path: '',
@@ -60,6 +58,5 @@ router.beforeEach((to) => {
   }
   else return
 })
-
 
 export default router

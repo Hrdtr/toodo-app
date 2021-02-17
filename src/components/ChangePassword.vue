@@ -84,9 +84,6 @@ export default ({
     IonLabel,
     IonText,
   },
-  mounted() {
-    this.openToast()
-  },
   methods: {
     dismissModal() {
       modalController.dismiss()

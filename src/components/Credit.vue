@@ -19,11 +19,12 @@ export default {
 <style scoped>
 #container {
   text-align: center;
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   right: 0;
-  top: 90%;
-  transform: translateY(-50%);
+  /* top: 75%;
+  transform: translateY(-50%); */
+  margin-top: 80px;
 }
 
 #container strong {

@@ -64,9 +64,9 @@
                 <span style="margin-bottom: 2px;">
                   {{ task.project }}
                 </span>
-                <ion-card-title class="task-card-title" :class="task.status === 1 ? 'task-done': ''">
+                <p color="none" class="task-card-title" :class="task.status === 1 ? 'task-done': ''">
                   {{ task.title }}
-                </ion-card-title>
+                </p>
               </div>
               <button v-if="task.expanded" color="none" @click.stop="collapseTask(i)" style="background: transparent; margin-top: -22px;">
                 <ion-icon :icon="caretUpOutline"></ion-icon>
@@ -121,7 +121,6 @@ import {
   IonTitle,
   IonContent,
   IonCard,
-  IonCardTitle,
   IonButton,
   IonIcon,
   IonSkeletonText,
@@ -151,7 +150,6 @@ export default {
     IonContent,
     IonPage,
     IonCard,
-    IonCardTitle,
     IonButton,
     IonIcon,
     IonSkeletonText,
@@ -292,6 +290,11 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  --color: var(--ion-text-color, #000);
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.2;
+  color: var(--color);
 }
 .task-card-description {
   width: 100%;
@@ -310,7 +313,7 @@ export default {
   background: var(--ion-color-success);
 }
 .task-done {
-  text-decoration: line-through;
+  text-decoration: line-through !important;
 }
 .task-card-action {
   margin-top: 10px;

@@ -125,6 +125,7 @@ export default ({
 
         const project = JSON.parse(JSON.stringify(res))
         project.tasks.forEach((t) => t.expanded = false)
+        project.tasks.sort((a, b) => a.status - b.status)
 
         loadingController.dismiss()
         this.closeModal(project)

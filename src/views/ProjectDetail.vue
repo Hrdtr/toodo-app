@@ -36,9 +36,9 @@
         <div class="task-card-content ion-padding">
           <div v-if="task.status === 1" class="task-done-indicator"></div>
           <div class="task-card-header">
-            <ion-card-title class="task-card-title" :class="task.status === 1 ? 'task-done': ''">
+            <p color="none" class="task-card-title" :class="task.status === 1 ? 'task-done': ''">
               {{ task.title }}
-            </ion-card-title>
+            </p>
             <button v-if="task.expanded" color="none" @click.stop="collapseTask(i)" style="background: transparent; margin-top: -5px;">
               <ion-icon :icon="caretUpOutline"></ion-icon>
             </button>
@@ -96,7 +96,6 @@ import {
   IonTitle,
   IonContent,
   IonCard,
-  IonCardTitle,
   IonButtons,
   IonButton,
   IonIcon,
@@ -131,7 +130,6 @@ export default  {
     IonContent,
     IonPage,
     IonCard,
-    IonCardTitle,
     IonButtons,
     IonButton,
     IonIcon,
@@ -314,6 +312,11 @@ export default  {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  --color: var(--ion-text-color, #000);
+  margin: 0px;
+  padding: 0px;
+  line-height: 1.2;
+  color: var(--color);
 }
 .task-card-description {
   width: 100%;

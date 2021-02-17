@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.a0241082be9420b831d57ef18adeea53.js"
+  "/precache-manifest.c4aaa9087c599f4d8d460b696f3e533e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "Toodo"});
